@@ -1,0 +1,48 @@
+<div class="container card-body ">
+
+
+  <button class="m-4" mat-raised-button color="primary" (click)="openDialog()">Add Employee</button>
+  <div class="row ">
+    <div class="col-sm-12 overFlow">
+
+      <table id="example2" class="table table-bordered  dataTable dtr-inline margin-auto"
+        aria-describedby="example2_info">
+
+        <thead>
+          <tr>
+            <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+              aria-sort="ascending" aria-label="id">id
+            </th>
+            <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+              aria-sort="ascending" aria-label="First name">Name
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="email">Email
+              Id</th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="email">Edit
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="email">Delete
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.email}}</td>
+            <td>
+              <button type="button" mat-mini-fab color="primary"><mat-icon class="editBtn"
+                  (click)="openDialog(emp)">edit</mat-icon>
+              </button>
+            </td>
+            <td>
+              <button class="delete" mat-mini-fab color="warn" ><mat-icon (click)="deleteEmp(emp.id)"  class="deleteBtn">delete</mat-icon></button>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>
